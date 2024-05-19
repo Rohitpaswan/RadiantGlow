@@ -1,0 +1,191 @@
+{
+  "categories": [
+    {
+      "name": "skincare",
+      "products": [
+        {
+          "id": "SK001",
+          "name": "hydrating facial cleanser",
+          "description": "A gentle, hydrating facial cleanser suitable for all skin types.",
+          "price": 159.99,
+          "rating": 4.5,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/skincare/curology.jpg"
+        },
+        {
+          "id": "SK002",
+          "name": "vitamin c serum",
+          "description": "Brightens skin and reduces the appearance of dark spots.",
+          "price": 174.99,
+          "rating": 4.8,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/skincare/vitamic-c.jpg"
+        },
+        {
+          "id": "SK004",
+          "name": "Face Mask",
+          "description": "Origins Original Skin Retexturing Mask with Rose Clay 1",
+          "price": 159.99,
+          "rating": 4.5,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/skincare/globencer.jpg"
+        },
+        {
+          "id": "SK005",
+          "name": "daily moisturizer",
+          "description": "A lightweight moisturizer that hydrates and protects the skin.",
+          "price": 164.99,
+          "rating": 4.7,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/skincare/brittney.jpg"
+        }
+      ]
+    },
+    {
+      "name": "hair",
+      "products": [
+        {
+          "id": "HR001",
+          "name": "nourishing shampoo",
+          "description": "Cleanses and nourishes hair, leaving it shiny and healthy.",
+          "price": 152.99,
+          "rating": 4.6,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/hair/shampoo.jpg"
+        },
+        {
+          "id": "HR002",
+          "name": "argan oil conditioner",
+          "description": "Moisturizes and detangles hair, making it smooth and manageable.",
+          "price": 169.99,
+          "rating": 4.7,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/hair/argan_oil_conditioner.jpg"
+        },
+        {
+          "id": "HR003",
+          "name": "intensive hair mask",
+          "description": "Deeply conditions and repairs damaged hair, leaving it soft and silky.",
+          "price": 179.99,
+          "rating": 4.8,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/hair/glenna.jpg"
+        },
+        {
+          "id": "HR004",
+          "name": "miya cosmetics light refreshing shampoo",
+          "description": "Gently cleanses and revitalizes hair, leaving it refreshed and light.",
+          "price": 159.99,
+          "rating": 4.5,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/hair/mayaShampoo.jpg"
+        }
+      ]
+    },
+    {
+      "name": "bath & body",
+      "products": [
+        {
+          "id": "BB001",
+          "name": "lavender bath bomb",
+          "description": "Relax and unwind with this fragrant lavender bath bomb.",
+          "price": 154.99,
+          "rating": 4.9,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/bath-body/bath_.jpg"
+        },
+        {
+          "id": "BB002",
+          "name": "shea butter body lotion",
+          "description": "Deeply moisturizes and nourishes dry skin.",
+          "price": 159.99,
+          "rating": 4.6,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/bath-body/body-loson.jpg"
+        },
+        {
+          "id": "BB003",
+          "name": "refreshing citrus soap",
+          "description": "Invigorating citrus-scented soap that cleanses and refreshes the skin.",
+          "price": 9.99,
+          "rating": 4.7,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/bath-body/soap.jpg"
+        },
+        {
+          "id": "BB004",
+          "name": "coconut milk body lotion",
+          "description": "Rich, creamy body lotion infused with coconut milk for deep hydration.",
+          "price": 179.99,
+          "rating": 4.8,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/bath-body/mathilde.jpg"
+        }
+      ]
+    },
+    {
+      "name": "fragrance",
+      "products": [
+        {
+          "id": "FR001",
+          "name": "eau de parfum",
+          "description": "A captivating and long-lasting fragrance with floral notes.",
+          "price": 199.99,
+          "rating": 4.8,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/fragrance/pexels-jessbaileydesign-755992.jpg"
+        },
+        {
+          "id": "FR002",
+          "name": "citrus cologne",
+          "description": "A refreshing and invigorating cologne with citrus undertones.",
+          "price": 189.99,
+          "rating": 4.7,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/fragrance/fra.jpg"
+        },
+        {
+          "id": "FR003",
+          "name": "woody perfume",
+          "description": "A warm and earthy perfume with woody accords.",
+          "price": 219.99,
+          "rating": 4.5,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/fragrance/fra.jpg"
+        },
+        {
+          "id": "FR004",
+          "name": "Greeko Man Perfume for Men",
+          "description": "Greeko Man's Perfumes Collection Made From a Blend of Exotic and Delicate Fragrances.",
+          "price": 179.99,
+          "rating": 4.9,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/fragrance/gerrko.jpg"
+        }
+      ]
+    },
+    {
+      "name": "gifts",
+      "products": [
+        {
+          "id": "GF001",
+          "name": "spa gift set",
+          "description": "A luxurious spa gift set with bath salts, body lotion, and candles.",
+          "price": 179.99,
+          "rating": 4.9,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/gifts/spa%20gift%20set.jpg"
+        },
+        {
+          "id": "GF002",
+          "name": "men's grooming kit",
+          "description": "Complete grooming kit with razor, shaving cream, and aftershave.",
+          "price": 164.99,
+          "rating": 4.7,
+          "availability": "In Stock",
+          "imageURL": "https://jppjdhftxjmxeuglmnna.supabase.co/storage/v1/object/public/productImg/gifts/mangrooming.jpg"
+        }
+      ]
+    }
+  ]
+}
