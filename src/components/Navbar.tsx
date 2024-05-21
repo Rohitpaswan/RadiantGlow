@@ -17,6 +17,11 @@ const Navbar: React.FC = () => {
   const router = useRouter();
 
   const cart = useAppSelector(getCart);
+  let totalQuantity =0 ;
+  cart.forEach((product : any )=>   totalQuantity+= product.quantity)
+   
+    
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -45,7 +50,7 @@ const Navbar: React.FC = () => {
           {/* Side bar for moblie */}
           <div
             className={clsx(
-              "fixed  w-full  h-dvh md:hidden border-2-solid  bg-black/95 blackdrop-blur-sm top-0 right-0 -translate-x-full  transition-all",
+              "fixed  w-full  h-dvh md:hidden border-2-solid  bg-black/95 blackdrop-blur-sm z-10 top-0 right-0 -translate-x-full  transition-all",
               toggle && "translate-x-0 "
             )}
           >
@@ -55,9 +60,11 @@ const Navbar: React.FC = () => {
                 onClick={() => setToggle((pre) => !pre)}
               />
               <div className="font-bold text-2xl"> HI, USER </div>
+              <Link href= '/shop'>
               <div className="font-bold hover:border-b border-transparent hover:border-black hover:cursor-pointer" >
                 SHOPPING
               </div>
+              </Link>
               <div className="font-bold hover:border-b border-transparent hover:border-black hover:cursor-pointer">
                 ABOUT
               </div>
@@ -83,10 +90,10 @@ const Navbar: React.FC = () => {
             </div>
             </Link>
             
-            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer">
+            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
               About
             </div>
-            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer">
+            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
               Contact
             </div>
           </div>
@@ -108,7 +115,7 @@ const Navbar: React.FC = () => {
             <Link href='/cart'>
             <div className="text-xl relative flex items-center">
               <span className="absolute left-6 top-0 transform -translate-y-1/2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                {cart.length}
+                {totalQuantity}
               </span>
               <FaShoppingCart />
             </div>

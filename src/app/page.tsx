@@ -15,6 +15,7 @@ import giftImg from "../../public/img/gift.jpg"
 import frangenceImg from "../../public/img/frag.jpg"
 import abtImg from "../../public/img/ab1.jpg"
 import abtImg2 from "../../public/img/ab2.jpg"
+import Link from "next/link";
 
 
 
@@ -49,9 +50,10 @@ export default function Home() {
                 smooth and shiny tresses.
               </p>
               <div className="flex justify-center">
-                <button className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-700 text-zinc-400 hover:bg-black hover:text-zinc-100 hover:border-zinc-100  transition-colors duration-200 ease-in-out">
+               <Link href="/shop"> <button className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-700 text-zinc-400 hover:bg-black hover:text-zinc-100 hover:border-zinc-100  transition-colors duration-200 ease-in-out">
                   Shop Now
                 </button>
+                </Link>
               </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
