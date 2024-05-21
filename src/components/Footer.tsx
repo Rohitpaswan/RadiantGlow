@@ -2,10 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-footerColor h-[16vw] flex  items-center justify-center mt-[6vw]">
-      <div className="grid grid-cols-12 w-[85%] h-full  ">
+    <div className="bg-footerColor mt-[6vw]  w-full">
+    <div className=  " md:w-full flex flex-col items-center justify-center">
+      <div className="grid grid-cols-12 w-[75%] h-full  ">
         {/* part-1 */}
-        <div className="col-span-6   pt-12 flex flex-col items-start ">
+        <div className="col-span-12 md:col-span-6   pt-12 flex flex-col items-start ">
           <div className="uppercase text-3xl text-bold mb-2">
             Sign up for our updates
           </div>
@@ -24,28 +25,35 @@ const Footer = () => {
         </div>
 
         {/* part-2 */}
-        <div className="col-span-2 bg-red-100">
-          <div className="uppercase w-full flex flex-col items-center text-bold ">shop</div>
+        <div className="col-span-4 md:col-span-2 pt-12">
+          <div className="uppercase w-full flex flex-col items-center text-bold text-xl">shop</div>
           <p className="block text-center">Product</p>
           <p className="block text-center">Our Blog</p>
         </div>
 
         {/* part-3 */}
-        <div className="col-span-2 bg-yellow-100">
-          <div className="uppercase">About</div>
-          <span>Order</span>
-          <span>Shipping</span>
-          <span>FAQs</span>
+        <div className="col-span-4 md:col-span-2 pt-12">
+          <div className="uppercase w-full flex flex-col items-center text-bold text-xl">About</div>
+          <p  className="block text-center">Order</p>
+          <p  className="block text-center">Shipping</p>
+          <p  className="block text-center">FAQs</p>
         </div>
 
         {/* part-4 */}
-        <div className="col-span-2 bg-zinc-700">
-          <div className="uppercase">Contact</div>
-          <span>Instagram</span>
-          <span>Facebook</span>
-          <span>Twitter</span>
+        <div className="col-span-4 md:col-span-2 pt-12">
+          <div className="uppercase w-full flex flex-col items-center text-xl text-bold">Contact</div>
+          <p  className="block text-center">Instagram</p>
+          <p  className="block text-center">Facebook</p>
+          <p  className="block text-center">Twitter</p>
         </div>
       </div>
+
+    </div>
+    
+    <footer className="mt-5 text-center w-full md:w-[75%] p-3 px-10 flex flex-col md:flex-row justify-between items-center bg-footerColor text-textColor">
+      <p>&copy; 2024 RadiantGlow. All rights reserved</p>
+      <p>Site by Rohit Paswan</p>
+    </footer>
     </div>
   );
 };

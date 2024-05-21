@@ -1,28 +1,31 @@
 "use client";
+import ProductCard from "@/components/ProductCard";
+import SingleProduct from "@/components/SingleProduct";
 import { useSupabase } from "@/utils/superbase/hooks/useSuperbase";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import PageResult from "@/components/PageResult";
+import React, { useEffect, useState, useCallback } from "react";
 import { BeatLoader } from "react-spinners";
-import Footer from "@/components/Footer";
 
-const SearchPage = () => {
-  const { query } = useParams();
-  const { filterProducts, getFilterdata } = useSupabase();
+const ProductDetail = () => {
+  const { id } = useParams();
+  const { singleProduct, getSingleProduct } = useSupabase();
   const [isLoading, setIsLoading] = useState(false);
 
+ 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      await getFilterdata(query.toString());
+      await getSingleProduct(id.toString());
       setIsLoading(false);
     };
-
+  
     fetchData();
-  }, [query, getFilterdata]);
+  }, [getSingleProduct, id]);
+
+  console.log(singleProduct);
 
   return (
-    <div className="">
+    <div className="h-full w-full flex items-center justify-center">
       {isLoading ? (
         <div className="absolute inset-0 flex justify-center items-center bg-white bg-opacity-80 z-50">
           <BeatLoader
@@ -33,20 +36,12 @@ const SearchPage = () => {
             data-testid="loader"
           />
         </div>
-      ) :  (
-        <div>
-          { filterProducts.length === 0 ? (
-            <div className="text-center mt-4">No products found with name {query}</div>
-          ) : (
-            <PageResult filterProducts={filterProducts} />
-          )}
-           <Footer/>
-        </div>
+      ) : (
+        {singleProduct} && <SingleProduct singleProduct={singleProduct} />
+        
       )}
-
-     
     </div>
   );
 };
 
-export default SearchPage;
+export default ProductDetail;

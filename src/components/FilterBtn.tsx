@@ -12,7 +12,7 @@ const FilterBtn = () => {
 
   return (
     
-    <div className="pb-2 w-[90%] whitespace-nowrap overflow-x-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+    <div className="pb-2 w-[85%] whitespace-nowrap overflow-x-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
     {categoryArray.map((category, index) => {
       return (
         <button 

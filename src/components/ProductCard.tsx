@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { GiBeachBag } from "react-icons/gi";
 
 const ProductCard = ({ item }: { item: any }) => {
+  const router = useRouter()
   return (
     <>
-      <div className="">
-        <div className="bg-white rounded-lg  lg:w-[88%] shadow-md lg:hover:scale-105 lg:hover:shadow-xl duration-500">
+      <div className="w-full">
+        <div className="bg-white rounded-lg  lg:w-[full] shadow-md lg:hover:scale-105 lg:hover:shadow-xl duration-500 " onClick={() =>{router.push(`/product/${item.id}`)}}>
           <Link href={""}>
             <img
               src={item.imageURL}
