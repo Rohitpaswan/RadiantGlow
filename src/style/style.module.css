@@ -1,89 +1,96 @@
-
 /* Home-page */
-.features{
+.features {
     margin-bottom: 10vw;
-}
-
-
-
-.update {
-    
+  }
+  
+  .update {
     height: fit-content;
     margin-bottom: 15px;
     padding: 0 4vw;
     position: relative;
     width: 100%;
-    
-
-
-}
-
-.upadate h2 {
+  }
+  
+  .update h2 {
     text-align: center;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 2vw;
-   width: fit-content;
-
-}
-
-.elem {
+    width: fit-content;
+  }
+  
+  .elem {
     width: 100%;
     height: 10dvh;
-    
     border-top: 2px solid whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
-
-}
-
-.elem:nth-last-child(1) {
+  }
+  
+  .elem:nth-last-child(1) {
     border-bottom: 1px solid #fff;
-}
-
-.elem h4 {
+  }
+  
+  .elem h4 {
     font-weight: 600;
     width: 26%;
     font-size: 1vw;
     text-transform: uppercase;
     color: #bcbcbc;
-}
-
-.elem-part2 {
+  }
+  
+  .elem-part2 {
     width: 40%;
-}
-
-.elem-part2 h3 {
+  }
+  
+  .elem-part2 h3 {
     font-size: 2.5vw;
-}
-
-.elem-part2 h5 {
+  }
+  
+  .elem-part2 h5 {
     margin-top: 5px;
     font-size: 1.2vw;
-}
-
-.elem img {
-    width: 100px;
-    height: 100px;
+  }
+  
+  .elem img {
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
     opacity: 0;
     position: absolute;
     left: 14%;
     transition: all ease .7s;
-}
-
-.elem:nth-last-child(2n+1):hover img {
-    opacity: .7;
-    left: -40%;
-}
-
-
-.elem:nth-last-child(2n):hover img {
-    opacity: .7;
+  }
+  
+  .elem:nth-last-child(2n+1):hover img {
+    opacity: 0.7;
+    left: 30%;
+  }
+  
+  .elem:nth-last-child(2n):hover img {
+    opacity: 0.7;
     left: 32%;
-}
+  }
+  
+  /* Media query to remove hover effects for screens below 800px */
+  @media (max-width: 800px) {
+    .elem h4{
+        font-size: 12px;
+    }
+    .elem img {
+      opacity: 1; /* Ensure the image is fully visible */
+      left: 14%;  /* Reset the position */
+      transition: none; /* Remove transition effects */
+    }
+  
+    .elem:nth-last-child(2n+1):hover img,
+    .elem:nth-last-child(2n):hover img {
+      opacity: 1; /* Ensure no change on hover */
+      left: 14%;  /* Ensure no change on hover */
+    }
+  }
+  

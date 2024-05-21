@@ -4,8 +4,20 @@ import { useSupabase } from "@/utils/superbase/hooks/useSuperbase";
 import React, { useEffect } from "react";
 import style from "@/style/style.module.css";
 import Footer from "@/components/Footer";
+
+// import Images 
 import Image from "next/image";
 import heroImg from "../../public/img/img1.jpg";
+import skinImg from "../../public/img/skin.jpg"
+import bodyImg from "../../public/img/body.jpg"
+import hairImg from "../../public/img/hair.jpg"
+import giftImg from "../../public/img/gift.jpg"
+import frangenceImg from "../../public/img/frag.jpg"
+import abtImg from "../../public/img/ab1.jpg"
+import abtImg2 from "../../public/img/ab2.jpg"
+
+
+
 export default function Home() {
   const { products, fetchData } = useSupabase();
   useEffect(() => {
@@ -20,7 +32,7 @@ export default function Home() {
   return (
     <div className="w-full  bg-black">
       <div className="w-full lg:w-[85%] m-auto">
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 body-font mb-6">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center justify-center text-center">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-zinc-300">
@@ -53,12 +65,49 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="categoeries w-[85%] m-auto mb-10 mt-10 ">
+          <h1 className="text-3xl font-bold uppercase  text-center text-zinc-300 mb-10">
+            Categoeries
+          </h1>
+          <div
+            className={`${style.update} flex items-center justify-end gap-1 pr-6 w-full`}
+          >
+            {/* Left Side */}
+            
+            {/* Right side */}
+            <div className="w-full md:w-[50%]">
+              <div className={style.elem}>
+                <h4>skincare</h4>
+                <Image src={skinImg} alt="skin" className="hidden md:block" />
+              </div>
+              <div className={style.elem}>
+              <Image src={hairImg} alt="skin" className="hidden md:block" />
+                <h4>hair</h4>
+              </div>
+
+              <div className={style.elem}>
+              <Image src={bodyImg} alt="skin" className="hidden md:block" />
+                <h4>body and bath</h4>
+              </div>
+
+              <div className={style.elem}>
+              <Image src={frangenceImg} alt="skin" className="hidden md:block" />
+                <h4>Fragences</h4>
+              </div>
+              <div className={style.elem}>
+              <Image src={giftImg} alt="skin" className="hidden md:block" />
+                <h4>gifts</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Image slide */}
         <section
           className={`${style.features} w-[85%] m-auto flex flex-col justify-center items-center`}
         >
-          <div>
-            <h1 className="text-3xl font-bold  ">Our Features</h1>
+          <div className="mt-10">
+            <h1 className="text-3xl font-bold text-zinc-300 border-b-2 bottom-zinc-200 text-center ">Our Features</h1>
             <p>You can checkout our new product at biir price</p>
           </div>
           <div className="w-[85%] p-4 flex whitespace-nowrap overflow-x-scroll gap-4 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
@@ -73,50 +122,7 @@ export default function Home() {
         </section>
 
         {/* Catgoeries */}
-        <section className="categoeries w-[85%] m-auto mb-10 ">
-          <h1 className="text-3xl font-bold uppercase  text-center text-zinc-300 mb-10">
-            Categoeries
-          </h1>
-          <div
-            className={`${style.update} flex items-center justify-end gap-1 pr-6 w-full`}
-          >
-            {/* Left Side */}
-            <div className="w-[30%] text-zinc-400 hover:text-textColor">
-              <img
-                src="https://unsplash.com/photos/purple-haired-woman-in-black-top-leaning-on-wall-tLKOj6cNwe0"
-                alt=""
-              />
-            </div>
-            {/* Right side */}
-            <div className="w-[50%]">
-              <div className={style.elem}>
-                <h4>skincare</h4>
-                <img src="./images/update/pic1.jpg" alt="" />
-              </div>
-              <div className={style.elem}>
-                <img src="./images/img/img (3).jpg" alt="" />
-                <h4>hair</h4>
-              </div>
-
-              <div className={style.elem}>
-                <img
-                  src="./images/page2/mahdi-chaghari-pDcugCm-ZQs-unsplash.jpg"
-                  alt=""
-                />
-                <h4>body and bath</h4>
-              </div>
-
-              <div className={style.elem}>
-                <img src="./images/img/img (5).jpg" alt="" />
-                <h4>Fragences</h4>
-              </div>
-              <div className={style.elem}>
-                <img src="./images/img/img (5).jpg" alt="" />
-                <h4>gifts</h4>
-              </div>
-            </div>
-          </div>
-        </section>
+     
 
         <section className="about mt-5 ">
           <div className="bg-gray-100 p-4 w-[88%] m-auto">
@@ -135,18 +141,10 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex flex-col md:flex-row gap-4">
-                    <img
-                      src="https://via.placeholder.com/300x450"
-                      alt="Person"
-                      className="w-full md:w-1/2 object-cover"
-                    />
+                  <Image src={abtImg} alt="about" className="-full md:w-1/2 object-cover" />
                   </div>
                 </div>
-                <img
-                  src="https://via.placeholder.com/450x300"
-                  alt="Products"
-                  className="w-full md:w-1/2 object-cover"
-                />
+                <Image src={abtImg2} alt="about" className="-full md:w-1/2 object-cover" />
               </div>
             </div>
           </div>

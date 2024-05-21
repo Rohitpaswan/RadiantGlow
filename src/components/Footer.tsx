@@ -2,15 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-footerColor mt-[6vw]  w-full">
+    <div className="bg-footerColor mt-[6vw] m-auto w-full">
     <div className=  " md:w-full flex flex-col items-center justify-center">
       <div className="grid grid-cols-12 w-[75%] h-full  ">
         {/* part-1 */}
         <div className="col-span-12 md:col-span-6   pt-12 flex flex-col items-start ">
-          <div className="uppercase text-3xl text-bold mb-2">
+          <div className="uppercase text-2xl lg:text-3xl text-bold mb-2">
             Sign up for our updates
           </div>
-          <p className="text-semi-bold mb-8">
+          <p className="text-semi-bold mb-8 text-sm md:text-md">
             Get 10% discount for first product
           </p>
           <input
@@ -26,33 +26,33 @@ const Footer = () => {
 
         {/* part-2 */}
         <div className="col-span-4 md:col-span-2 pt-12">
-          <div className="uppercase w-full flex flex-col items-center text-bold text-xl">shop</div>
-          <p className="block text-center">Product</p>
-          <p className="block text-center">Our Blog</p>
+          <div className="uppercase w-full flex flex-col items-center text-bold text-md gap-3 justify-start cursor-pointer">shop</div>
+          <p className="block text-center text-sm cursor-pointer">Product</p>
+          <p className="block text-center text-sm cursor-pointer">Our Blog</p>
         </div>
 
         {/* part-3 */}
         <div className="col-span-4 md:col-span-2 pt-12">
-          <div className="uppercase w-full flex flex-col items-center text-bold text-xl">About</div>
-          <p  className="block text-center">Order</p>
-          <p  className="block text-center">Shipping</p>
-          <p  className="block text-center">FAQs</p>
+          <div className="uppercase w-full flex flex-col items-center text-bold text-md gap-3 justify-start cursor-pointer">About</div>
+          <p  className="block text-center text-sm text-black-70 cursor-pointer">Order</p>
+          <p  className="block text-center text-sm cursor-pointer">Shipping</p>
+          <p  className="block text-center text-sm cursor-pointer">FAQs</p>
         </div>
 
         {/* part-4 */}
         <div className="col-span-4 md:col-span-2 pt-12">
-          <div className="uppercase w-full flex flex-col items-center text-xl text-bold">Contact</div>
-          <p  className="block text-center">Instagram</p>
-          <p  className="block text-center">Facebook</p>
-          <p  className="block text-center">Twitter</p>
+          <div className="uppercase w-full flex flex-col items-center text-md text-bold gap-3 justify-start cursor-pointer">Contact</div>
+          <p  className="block text-center text-sm cursor-pointer">Instagram</p>
+          <p  className="block text-center text-sm cursor-pointer">Facebook</p>
+          <p  className="block text-center text-sm cursor-pointer">Twitter</p>
         </div>
       </div>
 
     </div>
     
-    <footer className="mt-5 text-center w-full md:w-[75%] p-3 px-10 flex flex-col md:flex-row justify-between items-center bg-footerColor text-textColor">
-      <p>&copy; 2024 RadiantGlow. All rights reserved</p>
-      <p>Site by Rohit Paswan</p>
+    <footer className="mt-3 mx-auto md:mt-5 text-center w-full md:w-[75%] p-3 px-10 flex flex-col md:flex-row justify-between items-center bg-footerColor text-textColor">
+      <p className="text-sm">&copy; 2024 RadiantGlow. All rights reserved</p>
+      <p className="text-sm">Site by <span className="text-semi-bold text-black/80 text-md"> Rohit Paswan</span></p>
     </footer>
     </div>
   );
