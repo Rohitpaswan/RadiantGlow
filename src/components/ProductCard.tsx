@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -11,8 +12,10 @@ const ProductCard = ({ item }: { item: any }) => {
       <div className="w-full">
         <div className="bg-white rounded-lg  lg:w-[full] shadow-md lg:hover:scale-105 lg:hover:shadow-xl duration-500 " onClick={() =>{router.push(`/product/${item.id}`)}}>
           <Link href={""}>
-            <img
+            <Image
               src={item.imageURL}
+              width={150}
+              height={200}
               alt="Product image"
               className="h-80  w-full object-cover"
             />

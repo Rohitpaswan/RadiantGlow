@@ -11,9 +11,9 @@ const PageResult: React.FC<PageResultProp> = ({ filterProducts }) => {
   return (
     <div className="w-[85%] mx-auto  ">
       <div className="mt-10">
-        <div className="font-bold text-xl uppercase mb-4">Product Catalog</div>
+        <div className="font-bold text-xl uppercase mb-4 text-white ">Product Catalog</div>
 
-        <div className="hidden md:block mb-4">
+        <div className="hidden md:block mb-4 text-zinc-300">
           <h1 className="font-semi-bold text-xl">
             Result {filterProducts.length}
           </h1>

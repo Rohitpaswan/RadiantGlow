@@ -1,14 +1,20 @@
 import React from "react";
 import Footer from "./Footer";
+import { useAppDispatch } from "@/utils/superbase/hooks/redux";
+import { useRouter } from "next/navigation";
+import { addToCart } from "@/redux/cartSlice";
 
 const SingleProduct = ({singleProduct} : {singleProduct :any}) => {
-  if (!singleProduct || singleProduct.length === 0) return null;
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
+if (!singleProduct || singleProduct.length === 0) return null;
+  
   
 
   return (
     <div className="w-full">
-    <div className="w-[90%] border-2 text-black">
+    <div className="w-[90%]  text-white">
       <div className="bg-transparent py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4">
@@ -22,7 +28,11 @@ const SingleProduct = ({singleProduct} : {singleProduct :any}) => {
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-1/2 px-2">
-                  <button className="w-full py-2 px-2 rounded-full m-1 border-2 border-black text-textColor hover:bg-black hover:text-zinc-200 transition-colors duration-200 ease-in-out">
+                  <button className="w-full py-2 px-2 rounded-full m-1 border-2 border-white text-textColor hover:bg-black hover:text-zinc-200 transition-colors duration-200 ease-in-out
+                  " onClick={() => {
+                    dispatch(addToCart(singleProduct[0]));
+                    router.push("/cart");
+                }}>
                     Add to Cart
                   </button>
                 </div>

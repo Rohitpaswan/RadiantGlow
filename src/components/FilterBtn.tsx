@@ -17,7 +17,7 @@ const FilterBtn = () => {
       return (
         <button 
           key={index} 
-          className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-black text-textColor hover:bg-black hover:text-zinc-200 transition-colors duration-200 ease-in-out"
+          className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-600 text-white/55 hover:bg-black hover:text-zinc-200 transition-colors duration-200 ease-in-out"
         >
           {category}
         </button>
