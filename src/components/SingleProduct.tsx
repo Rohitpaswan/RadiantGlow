@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { useAppDispatch } from "@/utils/superbase/hooks/redux";
 import { useRouter } from "next/navigation";
 import { addToCart } from "@/redux/cartSlice";
+import Image from "next/image";
 
 const SingleProduct = ({singleProduct} : {singleProduct :any}) => {
   const dispatch = useAppDispatch();
@@ -20,11 +21,8 @@ if (!singleProduct || singleProduct.length === 0) return null;
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 mb-4">
-                <img
-                  className="w-full h-full object-cover"
-                  src={singleProduct[0].imageURL}
-                  alt="Product Image"
-                />
+             
+                <Image src={singleProduct[0].imageURL} width={130} height={150} alt="product-img" className="w-full h-full object-cover"/>
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-1/2 px-2">

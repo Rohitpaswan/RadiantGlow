@@ -24,6 +24,10 @@ export const useSupabase = () => {
     let { data, error } = await supabase.from("product").select("*");
     if (data) {
       setAllProducts(data);
+     
+      return data
+      
+      
     } else {
       console.log(error);
     }
@@ -50,6 +54,22 @@ export const useSupabase = () => {
   }, []);
 
 
+  /** fetching data from superbase based on select filter btn */
+  const getSelectedData = useCallback(async (category: string) => {
+    let { data, error } = await supabase
+      .from("product")
+      .select("*")
+      .or(
+        `category.ilike.%${category}%`
+      ); 
+
+    if (data) {
+     return data;
+    } else {
+      console.log(error);
+    }
+  }, []);
+
 
   //fetch single product data from superbase
   const getSingleProduct = useCallback(async (id: string) => {
@@ -69,10 +89,12 @@ export const useSupabase = () => {
     products,
     fetchData,
     filterProducts,
+    setFilterProducts,
     getFilterdata,
     getSingleProduct,
     singleProduct,
     getAllData,
     allProducts,
+    getSelectedData
   };
 };

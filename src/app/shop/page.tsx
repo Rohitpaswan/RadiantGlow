@@ -31,7 +31,7 @@ const AllProduct = () => {
           />
         </div>
       ) : (<>
-        <PageResult filterProducts={allProducts} />
+        <PageResult  initialProducts={allProducts} />
         <Footer />
         </>
       )}

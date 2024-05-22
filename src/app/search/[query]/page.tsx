@@ -38,7 +38,7 @@ const SearchPage = () => {
           { filterProducts.length === 0 ? (
             <div className="text-center mt-4">No products found with name {query}</div>
           ) : (
-            <PageResult filterProducts={filterProducts} />
+            <PageResult initialProducts={filterProducts} />
           )}
            <Footer/>
         </div>

@@ -5,17 +5,31 @@ import React, { useEffect } from "react";
 import style from "@/style/style.module.css";
 import Footer from "@/components/Footer";
 
-// import Images 
+// import Images
 import Image from "next/image";
 import heroImg from "../../public/img/img1.jpg";
-import skinImg from "../../public/img/skin.jpg"
-import bodyImg from "../../public/img/body.jpg"
-import hairImg from "../../public/img/hair.jpg"
-import giftImg from "../../public/img/gift.jpg"
-import frangenceImg from "../../public/img/frag.jpg"
-import abtImg from "../../public/img/ab1.jpg"
-import abtImg2 from "../../public/img/ab2.jpg"
+import skinImg from "../../public/img/skin.jpg";
+import bodyImg from "../../public/img/body.jpg";
+import hairImg from "../../public/img/hair.jpg";
+import giftImg from "../../public/img/gift.jpg";
+import frangenceImg from "../../public/img/frag.jpg";
+import abtImg from "../../public/img/ab1.jpg";
+import abtImg2 from "../../public/img/ab2.jpg";
 import Link from "next/link";
+
+/** swiper js */
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+
+
 
 
 
@@ -50,54 +64,63 @@ export default function Home() {
                 smooth and shiny tresses.
               </p>
               <div className="flex justify-center">
-               <Link href="/shop"> <button className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-700 text-zinc-400 hover:bg-black hover:text-zinc-100 hover:border-zinc-100  transition-colors duration-200 ease-in-out">
-                  Shop Now
-                </button>
+                <Link href="/shop">
+                
+                  <button className="mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-700 text-zinc-400 hover:bg-black hover:text-zinc-100 hover:border-zinc-100  transition-colors duration-200 ease-in-out">
+                    Shop Now
+                  </button>
                 </Link>
               </div>
             </div>
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 ">
               <Image
                 src={heroImg}
                 alt="hero-section"
                 width={250}
                 height={150}
+                className="m-auto"
               />
             </div>
           </div>
         </section>
 
-        <section className="categoeries w-[85%] m-auto mb-10 mt-10 ">
-          <h1 className="text-3xl font-bold uppercase  text-center text-zinc-300 mb-10">
+        <section className="categoeries w-[85%] m-auto mb-10 mt-10  ">
+          <h1 className="text-3xl py-0  font-bold uppercase  text-center text-zinc-300 mb-12">
             Categoeries
+            <hr  className="border-b-2 w-[80%] md:w-[20%] mx-auto  "/ >
           </h1>
+         
           <div
-            className={`${style.update} flex items-center justify-end gap-1 pr-6 w-full`}
+            className={`${style.update} flex items-center justify-end gap-1 pr-6 w-full my-12 mb-14`}
           >
-            {/* Left Side */}
-            
-            {/* Right side */}
+          
+
+         
             <div className="w-full md:w-[50%]">
               <div className={style.elem}>
-                <h4>skincare</h4>
+                <h4 >skincare</h4>
                 <Image src={skinImg} alt="skin" className="hidden md:block" />
               </div>
               <div className={style.elem}>
-              <Image src={hairImg} alt="skin" className="hidden md:block" />
+                <Image src={hairImg} alt="skin" className="hidden md:block" />
                 <h4>hair</h4>
               </div>
 
               <div className={style.elem}>
-              <Image src={bodyImg} alt="skin" className="hidden md:block" />
+                <Image src={bodyImg} alt="skin" className="hidden md:block" />
                 <h4>body and bath</h4>
               </div>
 
               <div className={style.elem}>
-              <Image src={frangenceImg} alt="skin" className="hidden md:block" />
+                <Image
+                  src={frangenceImg}
+                  alt="skin"
+                  className="hidden md:block"
+                />
                 <h4>Fragences</h4>
               </div>
               <div className={style.elem}>
-              <Image src={giftImg} alt="skin" className="hidden md:block" />
+                <Image src={giftImg} alt="skin" className="hidden md:block" />
                 <h4>gifts</h4>
               </div>
             </div>
@@ -105,28 +128,43 @@ export default function Home() {
         </section>
 
         {/* Image slide */}
-        <section
-          className={`${style.features} w-[85%] m-auto flex flex-col justify-center items-center`}
-        >
-          <div className="mt-10">
-            <h1 className="text-3xl font-bold text-zinc-300 border-b-2 bottom-zinc-200 text-center ">Our Features</h1>
-            <p>You can checkout our new product at biir price</p>
-          </div>
-          <div className="w-[85%] p-4 flex whitespace-nowrap overflow-x-scroll gap-4 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-            {products?.map((product) => {
+        <section className={`${style.features} w-[85%] mt-10 m-auto flex flex-col justify-center items-center`}>
+        <h1 className="text-3xl font-bold text-zinc-300 border-b-2 bottom-zinc-200 text-center ">Our Features</h1>
+
+          <div className="w-full mt-10">
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        breakpoints={{
+          // when window width is >= 640px
+          740: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+            {products?.map((product ,index ) => {
               return (
                 <div key={product.id}>
-                  <ProductCard item={product} />{" "}
+                  <SwiperSlide key={index}>
+                    <ProductCard item={product} />
+                  </SwiperSlide>
                 </div>
               );
             })}
+          </Swiper>
           </div>
         </section>
 
         {/* Catgoeries */}
-     
 
-        <section className="about mt-5 ">
+        <section className="about mt-10 pt-2 ">
           <div className="bg-gray-100 p-4 w-[88%] m-auto">
             <div className="container mx-auto  p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -143,10 +181,18 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex flex-col md:flex-row gap-4">
-                  <Image src={abtImg} alt="about" className="-full md:w-1/2 object-cover" />
+                    <Image
+                      src={abtImg}
+                      alt="about"
+                      className="-full md:w-1/2 object-cover"
+                    />
                   </div>
                 </div>
-                <Image src={abtImg2} alt="about" className="-full md:w-1/2 object-cover" />
+                <Image
+                  src={abtImg2}
+                  alt="about"
+                  className="-full md:w-1/2 object-cover"
+                />
               </div>
             </div>
           </div>
