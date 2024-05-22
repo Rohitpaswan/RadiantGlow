@@ -75,15 +75,17 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="catalog flex items-center justify-between gap-4">
-            <div className="text-2xl mr-2 ">
+          <Link href="/" > <div className="text-2xl mr-2 ">
+            
               <Image
                 width={80}
                 height={80}
                 src={logoImg}
                 alt="logo"
-                className="p-2"
+                className="p-2 cursor-pointer"
               />
             </div>
+            </Link>
             <Link href='/shop'>
             <div className="hidden md:block item text-md font-bold text-uppercase  cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
               Shop

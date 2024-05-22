@@ -6,6 +6,7 @@ import {
   removeFromTheCart,
 } from "@/redux/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/utils/superbase/hooks/redux";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -35,14 +36,14 @@ const ProductCart = () => {
                 Total Items {totalQuantity}
               </h2>
             </div>
-            <div className="flex mt-10 mb-5">
+            <div className="flex mt-10 mb-5 justify-between">
               <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
                 Product Details
               </h3>
               <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">
                 Quantity
               </h3>
-              <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">
+              <h3 className="hidden md:block  font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">
                 Price
               </h3>
               <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">
@@ -53,9 +54,9 @@ const ProductCart = () => {
             {cart?.map((product: any) => {
               return (
                 <div key={product.id}>
-                  <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5 ">
+                  <div className="flex items-center justify-between hover:bg-gray-100 -mx-8 px-6 py-5 ">
                     <div className="flex w-2/5">
-                      <div className="w-20">
+                      <div className="w-30 md:w-20">
                         <Image
                           src={product.imageURL}
                           width={150}
@@ -65,12 +66,12 @@ const ProductCart = () => {
                         />
                       </div>
                       <div className="flex flex-col justify-between ml-4 flex-grow">
-                        <span className="font-bold text-sm uppercase">
+                        <span className="font-semi-bold md:font-bold text-xs md:text-sm uppercase">
                           {product.name}
                         </span>
 
                         <button
-                          className="font-semibold hover:text-red-500 text-gray-500 text-xs border-2 p-3 w-[40%] hover:border-black "
+                          className="hidden w-[70%] rounded-lg md:block font-semibold hover:text-red-500 text-gray-500 text-xs border-2 p-3  hover:border-black "
                           onClick={() =>
                             dispatch(removeFromTheCart(product.id))
                           }
@@ -92,7 +93,7 @@ const ProductCart = () => {
                       </svg>
 
                       <div className="mx-2 border text-center w-8">
-                        {" "}
+                      
                         {product.quantity}
                       </div>
 
@@ -104,19 +105,27 @@ const ProductCart = () => {
                         <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                       </svg>
                     </div>
-                    <span className="text-center w-1/5 font-semibold text-sm">
-                      {product.price} Rs
+                    <span className="hidden md:block text-center w-1/5 font-semibold text-sm">
+                     <FaIndianRupeeSign className="inline-block"/> {product.price} 
                     </span>
-                    <span className="text-center w-1/5 font-semibold text-sm">
-                      Rs. {product.price * product.quantity}
+                    <span className="text-center w-1/4 md:w-1/5 font-semibold text-sm">
+                      <FaIndianRupeeSign className="inline-block"/> {product.price * product.quantity}
                     </span>
                   </div>
+                  <button
+                          className=" md:hidden font-semibold px-3 py-2 rounded-lg cursor-pointer hover:text-red-500 text-gray-500 text-xs border-2 p-3  hover:border-black "
+                          onClick={() =>
+                            dispatch(removeFromTheCart(product.id))
+                          }
+                        >
+                          Remove
+                        </button>
                 </div>
               );
             })}
 
             <Link href="/shop">
-              {" "}
+           
               <button className="flex font-semibold text-indigo-600 text-sm mt-10 ">
                 <svg
                   className="fill-current mr-2 text-indigo-600 w-4"

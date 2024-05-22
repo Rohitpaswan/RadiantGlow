@@ -20,7 +20,7 @@ const ProductCard = ({ item }: { item: any }) => {
               width={150}
               height={200}
               alt="Product image"
-              className="h-80  w-full object-cover"
+              className="h-80  w-full object-cover cursor-pointer"
               onClick={() =>{router.push(`/product/${item.id}`)}}
             />
           
