@@ -1,5 +1,3 @@
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -10,8 +8,8 @@ const nextConfig = {
         pathname: '/storage/v1/**', // Adjust the pathname as needed
       },
     ],
+    domains: ['lh3.googleusercontent.com'], // Correctly placed domains configuration
   },
 };
 
 export default nextConfig;
-

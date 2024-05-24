@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
@@ -11,17 +11,17 @@ import { getCart } from "@/redux/cartSlice";
 import Image from "next/image";
 import logoImg from "../../public/img/logo.jpeg";
 import Link from "next/link";
+
+import UserSiginBtn from "./UserSiginBtn";
 const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [query, setQuery] = useState<string>(""); // Ensure query is typed as a string
+
   const router = useRouter();
 
   const cart = useAppSelector(getCart);
-  let totalQuantity =0 ;
-  cart.forEach((product : any )=>   totalQuantity+= product.quantity)
-   
-    
-  
+  let totalQuantity = 0;
+  cart.forEach((product: any) => (totalQuantity += product.quantity));
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -43,59 +43,71 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-center p-3 shadow-md  text-white h-20  ">
         <nav className="w-[85%] flex items-center justify-between">
           <IoMenu
-            className="md:hidden text-3xl  rounded-full mr-1 "
+            className="lg:hidden text-3xl  rounded-full mr-1 "
             onClick={() => setToggle((pre) => !pre)}
           />
 
-          {/* Side bar for moblie */}
+          {/* Side bar for moblie and mid-screen device*/}
           <div
             className={clsx(
-              "fixed  w-full  h-dvh md:hidden border-2-solid  bg-black/95 blackdrop-blur-sm z-10 top-0 right-0 -translate-x-full  transition-all",
+              "fixed  w-full  h-dvh lg:hidden border-2-solid  bg-black/95 blackdrop-blur-sm z-10 top-0 right-0 -translate-x-full  transition-all",
               toggle && "translate-x-0 "
             )}
           >
-            <section className="x text-white w-1/2 h-dvh p-8 gap-8 z-50   flex flex-col  justify-start">
+            <section className="x text-white w-[60%] h-dvh p-8 pl-12 gap-8 z-50   flex flex-col  justify-start ">
               <IoIosCloseCircle
                 className="text-4xl "
                 onClick={() => setToggle((pre) => !pre)}
               />
-              <div className="font-bold text-2xl"> HI, USER </div>
-              <Link href= '/shop'>
-              <div className="font-bold hover:border-b border-transparent hover:border-black hover:cursor-pointer" >
-                SHOPPING
-              </div>
+
+              <UserSiginBtn />
+              <Link href="/shop">
+                <div className="font-bold text-md hover:border-b border-transparent hover:border-black hover:cursor-pointer">
+                  SHOPPING
+                </div>
               </Link>
-              <div className="font-bold hover:border-b border-transparent hover:border-black hover:cursor-pointer">
+              <div className="font-bold text-md hover:border-b border-transparent hover:border-black hover:cursor-pointer">
                 ABOUT
               </div>
-              <div className="font-bold hover:border-b border-transparent hover:border-black hover:cursor-pointer">
+              <div className="font-bold text-md hover:border-b border-transparent hover:border-black hover:cursor-pointer">
                 CONTACT
               </div>
+              <Link href="/cart" className="">
+                
+              <div className="text-md relative flex items-center gap-2">
+                <span>Cart </span>
+                <span className="absolute left-16 top-0 transform -translate-y-1/2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                  {totalQuantity}
+                </span>
+                <FaShoppingCart />
+              </div>
+            </Link>
             </section>
           </div>
 
+
           <div className="catalog flex items-center justify-between gap-4">
-          <Link href="/" > <div className="text-2xl mr-2 ">
-            
-              <Image
-                width={80}
-                height={80}
-                src={logoImg}
-                alt="logo"
-                className="p-2 cursor-pointer"
-              />
-            </div>
+            <Link href="/">
+              <div className="text-2xl mr-2 ">
+                <Image
+                  width={80}
+                  height={80}
+                  src={logoImg}
+                  alt="logo"
+                  className="p-2 cursor-pointer"
+                />
+              </div>
             </Link>
-            <Link href='/shop'>
-            <div className="hidden md:block item text-md font-bold text-uppercase  cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
-              Shop
-            </div>
+            <Link href="/shop">
+              <div className="hidden lg:block item text-md font-bold text-uppercase  cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
+                Shop
+              </div>
             </Link>
-            
-            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
+
+            <div className="hidden lg:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
               About
             </div>
-            <div className="hidden md:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
+            <div className="hidden lg:block item text-md font-bold text-uppercase hover:cursor-pointer  border-b-2 border-transparent hover:border-b-2 hover:border-zinc-100">
               Contact
             </div>
           </div>
@@ -111,16 +123,16 @@ const Navbar: React.FC = () => {
                 placeholder="search.."
               />
             </div>
-            <button className="hidden md:block mb-2 py-2 px-6 rounded-full m-1 border-2 border-zinc-700 text-zinc-400 hover:bg-black hover:text-zinc-100 hover:border-zinc-100  transition-colors duration-200 ease-in-out">
-                  Login
-                </button>
-            <Link href='/cart'>
-            <div className="text-xl relative flex items-center">
-              <span className="absolute left-6 top-0 transform -translate-y-1/2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                {totalQuantity}
-              </span>
-              <FaShoppingCart />
+            <div className="hidden lg:block ">
+              <UserSiginBtn />
             </div>
+            <Link href="/cart" className="hidden md:block">
+              <div className="text-xl relative flex items-center">
+                <span className="absolute left-6 top-0 transform -translate-y-1/2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                  {totalQuantity}
+                </span>
+                <FaShoppingCart />
+              </div>
             </Link>
           </div>
         </nav>
