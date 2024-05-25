@@ -25,7 +25,7 @@ const ProductCard = ({ item }: { item: any }) => {
     };
   return (
     <>
-      <div className="w-60  md:w-80 flex items-center justify-center">
+      <div className="w-60  md:w-80  flex items-center justify-center">
         <div className="w-full  bg-white rounded-lg  lg:w-[full] shadow-md lg:hover:scale-105 lg:hover:shadow-xl duration-500 " >
           
             <Image
