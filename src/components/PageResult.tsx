@@ -57,8 +57,8 @@ const PageResult: React.FC<PageResultProp> = ({ initialProducts }) => {
             <FilterBtn handleFilterClick={handleFilterClick} />
           </div>
         </div>
-        <div className="mt-8 w-full flex justify-center">
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-y-5">
+        <div className="mt-8 w-full ">
+          <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-y-5 place-items-center">
             {filterProducts?.map((item: any) => {
               return (
                 <div key={item.id}>

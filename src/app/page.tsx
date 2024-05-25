@@ -131,7 +131,7 @@ export default function Home() {
         <section className={`${style.features} w-[85%] mt-10 m-auto flex flex-col justify-center items-center`}>
         <h1 className="text-3xl font-bold text-zinc-300 border-b-2 bottom-zinc-200 text-center ">Our Features</h1>
 
-          <div className="w-full mt-10">
+          <div className="w-60 md:w-full mt-10">
         <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -151,7 +151,7 @@ export default function Home() {
       >
             {products?.map((product ,index ) => {
               return (
-                <div key={product.id}>
+                <div key={product.id} className="">
                   <SwiperSlide key={index}>
                     <ProductCard item={product} />
                   </SwiperSlide>

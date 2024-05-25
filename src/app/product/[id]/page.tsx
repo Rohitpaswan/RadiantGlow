@@ -25,7 +25,7 @@ const ProductDetail = () => {
   console.log(singleProduct);
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
+    <div className="h-full w-full  flex items-center justify-center">
       {isLoading ? (
         <div className="absolute inset-0 flex justify-center items-center bg-white bg-opacity-80 z-50">
           <BeatLoader
